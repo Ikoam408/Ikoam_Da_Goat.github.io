@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Music-Shooter-X</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <span class="back ghost-label">Phonograph Linked</span>
+      <div class="title">Music-Shooter-X</div>
+      <div class="difficulty-selector">
+        <label>Difficulty:</label>
+        <select id="difficulty" class="difficulty-select">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      <div class="score" id="score">Score: 0</div>
+    </div>
+
+    <div class="hud-bar">
+      <button id="fullscreen-btn" class="action-btn">FULLSCREEN</button>
+      <button id="pause-btn" class="action-btn">PAUSE</button>
+      <button id="bomb-btn" class="special-button">BOMB x1</button>
+      <div class="hud-data">
+        <span id="lives">Lives: 3</span>
+        <span id="credits">Credits: 0</span>
+      </div>
+      <div id="message" class="message">Pause for the workshop. Store is menu/pause only.</div>
+    </div>
+
+    <div class="fullscreen-hud">
+      <div id="fs-lives">Lives: 3</div>
+      <div id="fs-score">Score: 0</div>
+      <div id="fs-credits">Credits: 0</div>
+    </div>
+
+    <div class="game-info">
+      <div class="status-pill" id="stage">Stage 1</div>
+      <div class="status-pill" id="combo">Combo x1</div>
+      <div class="status-pill" id="bomb-count">Bombs: 1</div>
+    </div>
+
+    <div class="leaderboard" id="leaderboard">
+      <h3>High Scores</h3>
+      <div id="leaderboard-list"></div>
+    </div>
+
+    <div id="main-menu" class="scene-overlay">
+      <div class="menu-panel">
+        <h1>Music-Shooter-X</h1>
+        <div class="menu-actions">
+          <button id="start-btn" class="primary-button">Start Game</button>
+          <button id="menu-store-btn" class="secondary-button">Store</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="pause-menu" class="pause-menu hidden">
+      <div class="pause-panel">
+        <h2>Paused</h2>
+        <div class="menu-actions">
+          <button id="resume-btn" class="primary-button">Resume</button>
+          <button id="pause-store-btn" class="secondary-button">Store</button>
+          <button id="pause-restart-btn" class="secondary-button">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="fs-message" class="fs-message"></div>
+    <canvas id="game"></canvas>
+    <audio id="background-music" loop></audio>
+
+    <div id="store-screen" class="store-screen hidden">
+      <div class="store-panel">
+        <div class="store-header">
+          <h2>Store</h2>
+          <button id="store-back-btn" class="secondary-button">Back</button>
+        </div>
+        <div class="store-content">
+          <div class="shop" id="upgrade-shop">
+            <h2>Clockwork Workshop</h2>
+            <div id="shop-items" class="shop-items"></div>
+          </div>
+          <div class="premium-shop" id="premium-shop" data-monetization>
+            <h2>Premium Credit Packs</h2>
+            <div class="premium-options">
+              <div class="premium-package">
+                <span class="premium-label">$1 - 3000 credits</span>
+                <div id="paypal-1k"></div>
+              </div>
+              <div class="premium-package">
+                <span class="premium-label">$2 - 7000 credits</span>
+                <div id="paypal-2k"></div>
+              </div>
+              <div class="premium-package">
+                <span class="premium-label">$5 - 20000 credits</span>
+                <div id="paypal-5k"></div>
+              </div>
+            </div>
+            <div class="premium-note">Available only from Store.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-over-overlay" class="game-over-overlay hidden">
+      <div class="game-over-panel">
+        <h1>GAME OVER!</h1>
+        <div class="final-score">
+          <div>Final Score: <span id="final-score">0</span></div>
+          <div>Credits Earned: <span id="earned-credits">0</span></div>
+        </div>
+        <div class="continue-options">
+          <button id="continue-btn" class="continue-button">Continue for 750 Credits</button>
+          <button id="restart-btn" class="restart-button">Start Fresh</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
